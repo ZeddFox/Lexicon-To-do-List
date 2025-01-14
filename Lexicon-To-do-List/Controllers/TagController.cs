@@ -51,11 +51,11 @@ namespace Lexicon_To_do_List.Controllers
                     if (item.Id == id)
                     {
                         _catalogueContext.Tags.Remove(item);
+                        _catalogueContext.SaveChanges();
+                        return true;
                     }
                 }
-                _catalogueContext.SaveChanges();
-
-                return true;
+                return false;
             }
             catch
             {
